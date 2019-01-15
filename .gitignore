@@ -25,6 +25,9 @@
 /build/
 /bin/
 
+# project specific
+simulation.txt
+
 # Ignore Gradle GUI config
 gradle-app.setting
 

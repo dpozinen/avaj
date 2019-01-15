@@ -11,7 +11,6 @@ public class Coordinates {
 		this.height = height;
 	}
 
-
 	public int getLongitude() {
 		return this.longitude;
 	}

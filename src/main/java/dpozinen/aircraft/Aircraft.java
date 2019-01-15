@@ -7,12 +7,18 @@ public class Aircraft {
 	private long			idCounter;
 
 
-	Aircraft(String name, Coordinates coordinates) {
+	protected Aircraft(String name, Coordinates coordinates) {
 		this.name = name;
 		this.coordinates = coordinates;
+		id = nextId();
 	}
 
 	private long nextId() {
-		return id;
+		return ++idCounter;
+	}
+
+	@Override
+	public String toString() {
+		return "#" + name + "(" + id + ")";
 	}
 }

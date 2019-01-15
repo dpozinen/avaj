@@ -16,4 +16,9 @@ public class JetPlane extends Aircraft implements Flyable {
 	public void registerTower(WeatherTower weatherTower) {
 
 	}
+
+	@Override
+	public String toString() {
+		return "JetPlane" + super.toString();
+	}
 }
