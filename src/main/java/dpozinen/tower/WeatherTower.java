@@ -1,14 +1,17 @@
 package dpozinen.tower;
 
-
 import dpozinen.aircraft.Coordinates;
+import dpozinen.weather.WeatherProvider;
 
 public class WeatherTower extends Tower {
 	
+	// creates new weather conditions
 	public String getWeather(Coordinates coordinates) {
-		return null;
+		return WeatherProvider.getProvider().getCurrentWeather(coordinates);
 	}
 	
-	private void changeWeather() {
+	// triggers notifying observers
+	void changeWeather() {
+		conditionsChanged();
 	} 
 }

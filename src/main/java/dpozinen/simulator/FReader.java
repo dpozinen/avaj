@@ -6,8 +6,8 @@ public class FReader {
 
 	private int symCycles;
 	
-	public void readAndValidate(Tower weatherTower) {
-		symCycles = 0;
+	public void readAndValidate(Tower weatherTower, String fileName) {
+		symCycles = 10;
 	}
 	
 	public int getSymCycles() {

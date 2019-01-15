@@ -1,11 +1,14 @@
 package dpozinen.weather;
 
+import java.util.Random;
+
 import dpozinen.aircraft.Coordinates;
 
 public class WeatherProvider {
 
 	private static WeatherProvider	weatherProvider = null;
 	private static String []		weather = {"RAIN", "FOG", "SUN", "SNOW"};
+	private Random random = new Random();
 
 	private WeatherProvider() {
 	}
@@ -18,6 +21,7 @@ public class WeatherProvider {
 
 	// generate new random weather
 	public String getCurrentWeather(Coordinates coordinates) {
-		return null;
+		int num = random.nextInt(weather.length);
+		return weather[num];
 	}
 }

@@ -5,7 +5,9 @@ import dpozinen.tower.WeatherTower;
 
 public class JetPlane extends Aircraft implements Flyable {
 	
-	private JetPlane(String name, Coordinates coordinates) {
+	private WeatherTower weatherTower;
+
+	JetPlane(String name, Coordinates coordinates) {
 		super(name, coordinates);
 	}
 	
@@ -14,7 +16,7 @@ public class JetPlane extends Aircraft implements Flyable {
 	}
 
 	public void registerTower(WeatherTower weatherTower) {
-
+		this.weatherTower = weatherTower;
 	}
 
 	@Override

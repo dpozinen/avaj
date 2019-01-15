@@ -8,3 +8,7 @@ plugins {
 }
 
 mainClassName = 'dpozinen.Main'
+
+run {
+   	args 'scenario.txt'
+}

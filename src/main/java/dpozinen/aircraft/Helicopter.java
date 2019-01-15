@@ -5,7 +5,9 @@ import dpozinen.tower.WeatherTower;
 
 public class Helicopter extends Aircraft implements Flyable {
 	
-	private Helicopter(String name, Coordinates coordinates) {
+	private WeatherTower weatherTower;
+
+	Helicopter(String name, Coordinates coordinates) {
 		super(name, coordinates);
 	}
 	

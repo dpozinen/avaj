@@ -19,6 +19,7 @@ public class Tower {
 		FWriter.write("Tower says: " + flyable + " unregistered from weather tower.");
 	}
 
+	// notifying observers
 	protected void conditionsChanged() {
 		for (Flyable f : observers)
 			f.updateConditions();
