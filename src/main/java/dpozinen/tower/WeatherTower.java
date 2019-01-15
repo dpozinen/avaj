@@ -1,6 +1,7 @@
 package dpozinen.tower;
 
 import dpozinen.aircraft.Coordinates;
+import dpozinen.tower.Tower;
 import dpozinen.weather.WeatherProvider;
 
 public class WeatherTower extends Tower {

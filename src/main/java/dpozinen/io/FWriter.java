@@ -1,4 +1,4 @@
-package dpozinen.simulator;
+package dpozinen.io;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,13 +7,13 @@ import java.nio.file.StandardOpenOption;;
 
 final public class FWriter {
 
-	static Path path;
-	
+	private static Path path;
+
 	private FWriter() {}
 
 	public static void create() {
+		path = Paths.get("simulation.txt");
 		try {
-			path = Paths.get("simulation.txt");
 			Files.deleteIfExists(path);
 			Files.createFile(path);
 		} catch (Exception e) {

@@ -9,9 +9,9 @@ public class AircraftFactory {
 		if (type.equalsIgnoreCase("Baloon"))
 			return new Baloon(name, coordinates);
 		if (type.equalsIgnoreCase("JetPlane"))
-			return new Baloon(name, coordinates);
+			return new JetPlane(name, coordinates);
 		if (type.equalsIgnoreCase("Helicopter"))
-			return new Baloon(name, coordinates);
+			return new Helicopter(name, coordinates);
 		return null;
 	}
 }

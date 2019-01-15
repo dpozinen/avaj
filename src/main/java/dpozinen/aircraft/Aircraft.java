@@ -21,4 +21,22 @@ public class Aircraft {
 	public String toString() {
 		return "#" + name + "(" + id + ")";
 	}
+
+	void checkBounds() {
+		if (coordinates.getHeight() > 100)
+			coordinates.setHeight(100);
+		if (coordinates.getHeight() < 0)
+			coordinates.setHeight(0);
+	}
+
+	protected int weatherToInt(String s) {
+		if (s.equals("SUN"))
+			return 0;
+		if (s.equals("RAIN"))
+			return 1;
+		if (s.equals("FOG"))
+			return 2;
+		else
+			return 3;
+	}
 }
