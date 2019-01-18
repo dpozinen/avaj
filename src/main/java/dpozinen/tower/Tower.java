@@ -14,7 +14,7 @@ public class Tower {
 		observers.add(flyable);
 		FWriter.write("Tower says: " + flyable + "registered to weather tower.");
 	}
-	
+
 	public void unregister(Flyable flyable) {
 		unregistered.add(flyable);
 		FWriter.write("Tower says: " + flyable + " unregistered from weather tower.");

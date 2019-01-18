@@ -5,7 +5,7 @@ import dpozinen.io.FWriter;
 import dpozinen.tower.WeatherTower;
 
 public class Helicopter extends Aircraft implements Flyable {
-	
+
 	private WeatherTower weatherTower;
 	private String [] frases = {
 		"This is hot.", // hot
@@ -17,7 +17,7 @@ public class Helicopter extends Aircraft implements Flyable {
 	Helicopter(String name, Coordinates coordinates) {
 		super(name, coordinates);
 	}
-	
+
 	// called when being notified
 	public void updateConditions() {
 		int weatherIndex = weatherToInt(weatherTower.getWeather(coordinates));
@@ -39,7 +39,7 @@ public class Helicopter extends Aircraft implements Flyable {
 		this.weatherTower = weatherTower;
 		weatherTower.register(this);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Helicopter" + super.toString() + " ";

@@ -5,7 +5,7 @@ import dpozinen.io.FWriter;
 import dpozinen.tower.WeatherTower;
 
 public class JetPlane extends Aircraft implements Flyable {
-	
+
 	private WeatherTower weatherTower;
 	private String [] frases = {
 		"Ahh, that's hot.", // hot
@@ -17,7 +17,7 @@ public class JetPlane extends Aircraft implements Flyable {
 	JetPlane(String name, Coordinates coordinates) {
 		super(name, coordinates);
 	}
-	
+
 	// called when being notified
 	public void updateConditions() {
 		int weatherIndex = weatherToInt(weatherTower.getWeather(coordinates));
