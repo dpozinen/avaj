@@ -26,13 +26,14 @@ public class FReader {
 			symCycles = Integer.parseInt(linesList.get(0));
 			if (symCycles < 0)
 				return false;
+
 			String [] split = new String[5];
 			for (int i = 1; i < linesList.size(); i++) {
 				split = linesList.get(i).split(" ");
 				aircraftFactory
-				.newAircraft(split[0], split[1], Integer.parseInt(split[2]), Integer.parseInt(split[3]), Integer.parseInt(split[4])) // TODO: refactor
+				.newAircraft(split[0], split[1], Integer.parseInt(split[2]), Integer.parseInt(split[3]), Integer.parseInt(split[4]))
 				.registerTower(weatherTower);
-				Arrays.fill(split, null); // necessary?
+				Arrays.fill(split, null);
 			}
 		} catch (NumberFormatException nfe) {
 			System.out.println("Non numeric input");
