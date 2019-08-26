@@ -9,17 +9,18 @@ import dpozinen.tower.WeatherTower;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class FReader {
 	private int symCycles;
 	private AircraftFactory aircraftFactory = new AircraftFactory();
 
-	private ArrayList<String> read(String filename) throws Exception {
+	private List<String> read(String filename) throws Exception {
 		Path path = Paths.get(filename);
-		return (ArrayList<String>) Files.readAllLines(path);
+		return Files.readAllLines(path);
 	}
 
-	private boolean isValid(ArrayList <String> linesList, WeatherTower weatherTower) {
+	private boolean isValid(List <String> linesList, WeatherTower weatherTower) {
 		try {
 			if (linesList.isEmpty() || linesList.size() <= 1)
 				return false;
@@ -44,7 +45,7 @@ public class FReader {
 	}
 
 	public void readAndValidate(WeatherTower weatherTower, String fileName) throws Exception {
-		ArrayList <String> linesList = read(fileName);
+		List <String> linesList = read(fileName);
 		if (!isValid(linesList, weatherTower))
 			throw new IllegalArgumentException("Invalid Input");
 	}

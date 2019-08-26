@@ -7,7 +7,7 @@ import dpozinen.tower.WeatherTower;
 public class Baloon extends Aircraft implements Flyable {
 
 	private WeatherTower weatherTower;
-	private String [] frases = {
+	private String [] phrases = {
 		"Let's enjoy the good weather and take some pics.", //hot
 		"Damn you rain! You messed up my baloon.", // rain
 		"The fuck is this fog.", // fog
@@ -30,8 +30,8 @@ public class Baloon extends Aircraft implements Flyable {
 		else
 			coordinates.increaseCoordinates(0, 0, -15); // snow
 		checkBounds();
-		FWriter.write(this + frases[weatherIndex]);
-		if (coordinates.getHeight() == 0)
+		FWriter.write(this + phrases[weatherIndex]);
+		if (coordinates.getHeight() <= 0)
 			weatherTower.unregister(this);
 	}
 

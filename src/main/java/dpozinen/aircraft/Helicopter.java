@@ -7,7 +7,7 @@ import dpozinen.tower.WeatherTower;
 public class Helicopter extends Aircraft implements Flyable {
 
 	private WeatherTower weatherTower;
-	private String [] frases = {
+	private String [] phrases = {
 		"This is hot.", // hot
 		"It's raining", // rain
 		"Can't see shit.", // fog
@@ -30,8 +30,8 @@ public class Helicopter extends Aircraft implements Flyable {
 		else
 			coordinates.increaseCoordinates(1, 0, -12); // snow
 		checkBounds();
-		FWriter.write(this + frases[weatherIndex]);
-		if (coordinates.getHeight() == 0)
+		FWriter.write(this + phrases[weatherIndex]);
+		if (coordinates.getHeight() <= 0)
 			weatherTower.unregister(this);
 	}
 

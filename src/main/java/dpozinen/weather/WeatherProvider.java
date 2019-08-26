@@ -10,8 +10,7 @@ public class WeatherProvider {
 	private static String []		weather = {"RAIN", "FOG", "SUN", "SNOW"};
 	private Random random = new Random();
 
-	private WeatherProvider() {
-	}
+	private WeatherProvider() {}
 
 	public static WeatherProvider getProvider() {
 		if (weatherProvider == null)
@@ -19,9 +18,14 @@ public class WeatherProvider {
 		return weatherProvider;
 	}
 
-	// generate new random weather
 	public String getCurrentWeather(Coordinates coordinates) {
+		int h = coordinates.getHeight();
+		int lo = coordinates.getLongitude();
+		int la = coordinates.getLatitude();
+		int coordinatesPart = h * lo * la;
 		int num = random.nextInt(weather.length);
-		return weather[num];
+		int r = num + coordinatesPart >= weather.length ? num : num+coordinatesPart;
+
+		return weather[r];
 	}
 }
