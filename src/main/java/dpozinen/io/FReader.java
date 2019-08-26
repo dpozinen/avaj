@@ -14,8 +14,8 @@ public class FReader {
 	private int symCycles;
 	private AircraftFactory aircraftFactory = new AircraftFactory();
 
-	private ArrayList<String> read() throws Exception {
-		Path path = Paths.get("scenario.txt");
+	private ArrayList<String> read(String filename) throws Exception {
+		Path path = Paths.get(filename);
 		return (ArrayList<String>) Files.readAllLines(path);
 	}
 
@@ -27,7 +27,7 @@ public class FReader {
 			if (symCycles < 0)
 				return false;
 
-			String [] split = new String[5];
+			String [] split;
 			for (int i = 1; i < linesList.size(); i++) {
 				split = linesList.get(i).split(" ");
 				aircraftFactory
@@ -44,7 +44,7 @@ public class FReader {
 	}
 
 	public void readAndValidate(WeatherTower weatherTower, String fileName) throws Exception {
-		ArrayList <String> linesList = read();
+		ArrayList <String> linesList = read(fileName);
 		if (!isValid(linesList, weatherTower))
 			throw new IllegalArgumentException("Invalid Input");
 	}
